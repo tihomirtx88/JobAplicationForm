@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
 from datetime import datetime
@@ -60,6 +60,11 @@ def index():
         flash(f"{first_name} your form was submitted successfully!", "success")
 
     return render_template("index.html");
+
+@app.route("/submissions")
+def submissions():
+    forms = Form.query.all()
+    return render_template("submissions.html", forms=forms)
 
 if __name__ == "__main__":
     with app.app_context():
