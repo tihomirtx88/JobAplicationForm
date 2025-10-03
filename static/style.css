@@ -1,0 +1,64 @@
+/* Основни настройки */
+body {
+    background-color: #f8f9fa; /* светлосив фон */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Контейнерът на страниците */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Заглавия */
+h1, h2, h3 {
+    color: #343a40;
+    font-weight: 600;
+}
+
+/* Бутоните */
+.btn {
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Таблици (например submissions.html) */
+.table {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th {
+    background: #495057;
+    color: white;
+}
+
+.table td, .table th {
+    padding: 12px;
+}
+
+/* Формуляри */
+.form-control {
+    border-radius: 6px;
+    box-shadow: none !important;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
+}
+
+/* Навигация */
+.navbar {
+    margin-bottom: 20px;
+}
