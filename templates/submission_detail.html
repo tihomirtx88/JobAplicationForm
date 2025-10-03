@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Submission Details</h1>
+    <ul class="list-group">
+      <li class="list-group-item"><strong>ID:</strong> {{ form.id }}</li>
+      <li class="list-group-item"><strong>Name:</strong> {{ form.first_name }} {{ form.last_name }}</li>
+      <li class="list-group-item"><strong>Email:</strong> {{ form.email }}</li>
+      <li class="list-group-item"><strong>Date:</strong> {{ form.date.strftime('%Y-%m-%d') }}</li>
+      <li class="list-group-item"><strong>Occupation:</strong> {{ form.occupation }}</li>
+    </ul>
+{% endblock %}
