@@ -66,6 +66,15 @@ def submissions():
     forms = Form.query.all()
     return render_template("submissions.html", forms=forms)
 
+@app.route("/submission/<int:id>")
+def submission_detail(id):
+    form = Form.query.get_or_404(id)
+    return render_template("submission_detail.html", form=form)
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 if __name__ == "__main__":
     with app.app_context():
         db.create_all();
