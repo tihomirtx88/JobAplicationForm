@@ -12,7 +12,7 @@
             <td>{{ form.email }}</td>
             <td>{{ form.date.strftime('%Y-%m-%d') }}</td>
             <td>{{ form.occupation }}</td>
-            <td><a href="{{ url_for('submission_detail', id=form.id) }}" class="btn btn-info btn-sm">View</a></td>
+            <td><a href="{{ url_for('main.submission_detail', id=form.id) }}" class="btn btn-info btn-sm">View</a></td>
           </tr>
       {% endfor %}
     </table>
