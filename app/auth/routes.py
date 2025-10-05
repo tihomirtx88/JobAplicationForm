@@ -27,8 +27,29 @@ def register():
 
         flash("Registration successful! Please log in.", "success")
         return redirect(url_for("auth.login"))
-    
+
     return render_template("register.html")
 
+@auth.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        email = request.form["email"]
+        password = request.form["password"]
 
+        user = User.query.filter_by(email=email).first()
 
+        if user and user.check_password(password):
+            login_user(user)
+            flash("Logged in successfully!", "success")
+            return redirect(url_for("main.index"))
+        else:
+            flash("Invalid email or password", "danger")
+
+    return render_template("login.html")
+
+@auth.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    flash("You have been logged out.", "info")
+    return redirect(url_for("main.index"))
