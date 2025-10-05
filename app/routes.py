@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from .models import Form, db
 from .services.mail_service import MailService
 from datetime import datetime
+from flask_login import login_required
 
 main = Blueprint("main", __name__)
 
@@ -28,6 +29,7 @@ def index():
     return render_template("index.html")
 
 @main.route("/submissions")
+@login_required
 def submissions():
     forms = Form.query.all()
     return render_template("submissions.html", forms=forms)
